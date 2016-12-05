@@ -1,49 +1,62 @@
-class DecksControllerController < ApplicationController
+class DecksController < ApplicationController
+  before_action :set_deck, only: [:show, :update, :destroy]
 
+  # GET /decks
+  # GET /decks.json
   def index
-    @decks = current_user.decks
+    @decks = Deck.all
+    @alphabetical_decks = Deck.alphabetical
+    @chronological_decks = Deck.chronological
+    @recent_decks = Deck.recent
+
+    render json: @decks
   end
 
+  # GET /decks/1
+  # GET /decks/1.json
   def show
-    @deck = find_deck
-    @cards = @deck.cards
+    render json: @deck
   end
 
-  def new
-    @deck = current_user.decks.new
-  end
-
+  # POST /decks
+  # POST /decks.json
   def create
-    @deck = current_user.decks.new(params[:deck])
+    @deck = Deck.new(deck_params)
 
     if @deck.save
-      redirect_to decks_url
+      render json: @deck, status: :created, location: @deck
     else
-      render action: "new"
+      render json: @deck.errors, status: :unprocessable_entity
     end
   end
 
-  def edit
-    @deck = find_deck
-  end
-
+  # PATCH/PUT /decks/1
+  # PATCH/PUT /decks/1.json
   def update
-    @deck = find_deck
-    if @deck.update_attributes(params[:deck])
-      redirect_to decks_url
+    @deck = Deck.find(params[:id])
+
+    if @deck.update(deck_params)
+      head :no_content
     else
-      render action: "edit"
+      render json: @deck.errors, status: :unprocessable_entity
     end
   end
 
+  # DELETE /decks/1
+  # DELETE /decks/1.json
   def destroy
-    @deck = find_deck
     @deck.destroy
+
+    head :no_content
   end
 
   private
 
-  def find_deck
-    current_user.decks.find(params[:id])
-  end
+    def set_deck
+      @deck = Deck.find(params[:id])
+    end
+
+    def deck_params
+      params.require(:deck).permit(:deck_id, :deck_name, :created_at, :updated_at)
+    end
 end
