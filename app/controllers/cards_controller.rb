@@ -1,4 +1,4 @@
-class CardsControllerController < ApplicationController
+class CardsController < ApplicationController
 	before_action :set_card, only: [:show, :update, :destroy]
 
   # GET /cards
