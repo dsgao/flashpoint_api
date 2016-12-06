@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :update, :destroy]
 
 	def index
-    @users = User.alphabetical.all
+    @users = User.all
 
     render json: @users
   end
@@ -54,5 +54,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:user_id, :username, :password, :facebook_id, :created_at, :updated_at)
   end
-  
+
 end
