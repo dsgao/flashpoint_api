@@ -4,12 +4,15 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'listen', '~> 3.1.5'
 
+gem 'pg'
+
 gem 'spring', :group => :development
 
 gem 'sqlite3', :group => :development
 
 #Using ActiveModelSerializers for serialization
 gem 'active_model_serializers', '~> 0.10.0'
+
 
 
 
