@@ -8,8 +8,6 @@ gem 'pg'
 
 gem 'spring', :group => :development
 
-gem 'sqlite3', :group => :development
-
 #Using ActiveModelSerializers for serialization
 gem 'active_model_serializers', '~> 0.10.0'
 
