@@ -6,7 +6,7 @@ gem 'listen', '~> 3.1.5'
 
 gem 'spring', :group => :development
 
-gem 'sqlite3'
+gem 'sqlite3', :group => :development
 
 #Using ActiveModelSerializers for serialization
 gem 'active_model_serializers', '~> 0.10.0'
