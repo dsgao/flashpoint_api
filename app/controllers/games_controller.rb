@@ -54,6 +54,6 @@ class GamesController < ApplicationController
     end
 
     def game_params
-      params.require(:game).permit(:asker_id, :teller_id, :created_at, :updated_at)
+      params.require(:game).permit(:asker_id, :teller_id)
     end
 end

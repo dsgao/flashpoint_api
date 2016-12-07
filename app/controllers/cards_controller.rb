@@ -55,6 +55,6 @@ class CardsController < ApplicationController
     end
 
     def card_params
-      params.require(:card).permit(:definition, :word, :created_at, :updated_at, :deck_id)
+      params.require(:card).permit(:definition, :word, :deck_id)
     end
 end
