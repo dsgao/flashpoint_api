@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:id, :email, :created_at, :updated_at)
+    params.require(:user).permit(:id, :facebook_id, :created_at, :updated_at)
   end
 
 end
