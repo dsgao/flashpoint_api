@@ -1,4 +1,3 @@
 class DeckSerializer < ActiveModel::Serializer
-	attributes :deck_name, :created_at, :updated_at
-	has_many :cards
+	attributes :id, :deck_name, :shared_ids, :user_id
 end

@@ -8,5 +8,4 @@ class Card < ApplicationRecord
 	
 	#Methods
 
-
 end
