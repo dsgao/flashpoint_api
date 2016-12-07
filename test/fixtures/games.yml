@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asker_id: 
+  teller_id: 
+
+two:
+  asker_id: 
+  teller_id: 
