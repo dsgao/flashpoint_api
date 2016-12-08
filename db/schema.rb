@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20161207192808) do
 
   create_table "decks", force: :cascade do |t|
     t.string   "deck_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "user_id"
-    t.integer  "shared_ids",              array: true
+    t.integer  "shared_ids", default: [],              array: true
   end
 
   create_table "games", force: :cascade do |t|
